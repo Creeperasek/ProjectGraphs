@@ -75,18 +75,21 @@ if is_connected(A):
     j = 0
 
     file = open("graph.txt", "w")
-    
     for line in array:
         j=j+1
+        deg = 0
         
         for val in line:
             
             file.write(str(val))
+            deg += val
             i = i + 1
 
             if(j==n and i==n):
+                file.write(f"| {str(deg)}")
                 continue
             elif(i == n):
+                file.write(f"| {str(deg)}")
                 file.write("\n")
                 i = 0
                 
