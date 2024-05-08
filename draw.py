@@ -1,4 +1,5 @@
 from pyvis.network import Network
+import webcolors as color
 
 #Number of nodes
 n = 10
@@ -12,7 +13,17 @@ def draw_graph(filename,graphfile):
     nodes = [0,1,2,3,4,5,6,7,8,9]
     g.add_nodes(nodes=nodes,
                 label=["0","1","2","3","4","5","6","7","8","9"],
-                color=["red","blue","green","brown","yellow","pink","purple","black","orange","dark_green"])
+                color=[color.rgb_to_name((255,0,0)),# Red
+                       color.rgb_to_name((0, 0, 255)), #Blue
+                       color.rgb_to_name((0, 255, 0)), #Green
+                       color.rgb_to_name((139, 0, 139)), # Magenta
+                       color.rgb_to_name((0, 0, 0)), #Black
+                       color.rgb_to_name((205, 133, 63)), #Peru
+                       color.rgb_to_name((0, 139, 139)), #DarkCyan
+                       color.rgb_to_name((139, 69, 19)), #Saddle Brown
+                       color.rgb_to_name((46, 139, 87)), #SeaGreen
+                       color.rgb_to_name((112, 128, 144)) #SlateGray
+                       ])
 
     j = 0
     i= 0
