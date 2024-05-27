@@ -25,7 +25,7 @@ def disconnect_vertices(A, i, j):
 def find_vertices_with_odd_degrees(degrees):
     return [i for i, degree in enumerate(degrees) if degree % 2 != 0]
 
-def make_eulerian(A):
+def make_eulerian(A,n):
     while not has_eulerian_cycle(A):
         degrees = degree_sequence(A)
         odd_vertices = find_vertices_with_odd_degrees(degrees)
@@ -42,7 +42,7 @@ def make_eulerian(A):
                 disconnect_vertices(A, v1, v2)
     return A
 
-def create_graph_file(A,filename):
+def create_graph_file(A,filename,n):
     array = A.tolist()
     i = 0
     j = 0
@@ -75,14 +75,14 @@ def genAndFix(n,p):
     print("Initial graph:")
     print(A)
 
-    create_graph_file(A,"Initial_graph.txt")
+    create_graph_file(A,"Initial_graph.txt",n)
 
     #Modify graph to be Eulerian and save it to file
-    A = make_eulerian(A)
+    A = make_eulerian(A,n)
     print("Eulerian graph:")
     print(A)
 
-    create_graph_file(A,"Eulerian_graph.txt")
+    create_graph_file(A,"Eulerian_graph.txt",n)
 
     
 
