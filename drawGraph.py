@@ -1,11 +1,9 @@
 from pyvis.network import Network
 import webcolors as color
 
-#Number of nodes
-n = 10
 
 #Drawing function - creates html file with drawn file
-def draw_graph(filename,graphfile):
+def draw_graph(filename,graphfile,n):
     g = Network()
 
     file = open(filename,"r")
@@ -57,7 +55,3 @@ def draw_graph(filename,graphfile):
     g.toggle_physics(True)
     g.barnes_hut()
     g.write_html(graphfile, True, False,False)
-
-#Main
-draw_graph("Initial_graph.txt","Initial_graph.html")
-draw_graph("Eulerian_graph.txt","Eulerian_graph.html")
